@@ -10,10 +10,10 @@ COPY . app.py /app/
 
 ## Step 3:
 # Install packages from requirements.txt
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --no-cache-dir pip==23.0.1 && pip install --no-cache-dir -r requirements.txt
 
-# hadolint ignore=DL3013
+# Exclude some rules
+#hadolint ignore=DL3013
 
 ## Step 4:
 # Expose port 80
@@ -21,4 +21,5 @@ EXPOSE 80
 
 ## Step 5:
 # Run app.py at container launch
-CMD ["python", "app.py"]
+
+CMD ["python","app.py"]
