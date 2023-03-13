@@ -7,4 +7,4 @@ docker build --tag=mlpredict .
 docker image ls
 
 # Run flask app
-docker run -p 80:8080 mlpredict
+docker run -p 80:5000 mlpredict
